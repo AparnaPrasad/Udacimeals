@@ -1,46 +1,47 @@
 import {ADD_RECIPE, REMOVE_FROM_CALENDER} from '../actions';
 const initialState = {
 	monday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	},
 	tuesday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	},
 	wednesday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	},
 	thursday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	},
 	friday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	},
 	saturday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	},
 	sunday:{
-		brakfast: null,
+		breakfast: null,
 		lunch: null,
 		dinner: null
 	}
 }
 
-export function calender( state = initialState, action) {
+export default function calender( state = initialState, action) {
 	const {day, meal, recipe} = action;
 	switch (action.type) {
 		case ADD_RECIPE:
+			console.log('in reducer');
 			return {
 				...state, [day]: {
 					...state[day],
